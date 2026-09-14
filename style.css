@@ -1,1 +1,250 @@
-/* Add your CSS here */
+/* ===========================
+   GENERAL STYLES
+   =========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* ===========================
+   ANIMATION KEYFRAMES
+   =========================== */
+
+/* Fade-in animation for cards on page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   HERO SECTION STYLES
+   =========================== */
+
+header {
+  background: linear-gradient(135deg, #0071C5 0%, #00C7FD 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+/* ===========================
+   TIMELINE SECTION STYLES
+   =========================== */
+
+section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Timeline container - displays cards in a row on desktop, stacked on mobile */
+section div {
+  background: white;
+  border: 2px solid #0071C5;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Animation on page load */
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Stagger animation delays for each card */
+section div:nth-child(1) { animation-delay: 0.1s; }
+section div:nth-child(2) { animation-delay: 0.2s; }
+section div:nth-child(3) { animation-delay: 0.3s; }
+section div:nth-child(4) { animation-delay: 0.4s; }
+section div:nth-child(5) { animation-delay: 0.5s; }
+section div:nth-child(6) { animation-delay: 0.6s; }
+section div:nth-child(7) { animation-delay: 0.7s; }
+section div:nth-child(8) { animation-delay: 0.8s; }
+section div:nth-child(9) { animation-delay: 0.9s; }
+
+/* Connecting vertical line through the timeline */
+section::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #0071C5 0%, #00C7FD 100%);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+section {
+  position: relative;
+}
+
+/* Hover effect for timeline cards */
+section div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 113, 197, 0.3);
+  border-color: #00C7FD;
+  background-color: #f0f8ff;
+}
+
+/* Year styling (large text) */
+section div h2 {
+  font-size: 2rem;
+  color: #0071C5;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on year */
+section div:hover h2 {
+  color: #00C7FD;
+}
+
+/* Card title styling */
+section div h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+/* Card images */
+section div img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect on images */
+section div:hover img {
+  transform: scale(1.05);
+}
+
+/* Card description text */
+section div p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ===========================
+   BOTTOM TEXT STYLING
+   =========================== */
+
+body > p {
+  text-align: center;
+  padding: 30px 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Mobile screens (up to 768px) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  header img {
+    width: 60px;
+  }
+
+  section div {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+
+  section div h2 {
+    font-size: 1.5rem;
+  }
+
+  section div h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Extra small screens (up to 480px) */
+@media (max-width: 480px) {
+  header {
+    padding: 40px 15px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 0 15px;
+  }
+
+  section div {
+    padding: 15px;
+    margin-bottom: 12px;
+  }
+
+  section div h2 {
+    font-size: 1.3rem;
+  }
+
+  section div h3 {
+    font-size: 1rem;
+  }
+
+  section div p {
+    font-size: 0.9rem;
+  }
+}
